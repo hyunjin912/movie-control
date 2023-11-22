@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>동영상 컨트롤러</title>
+	<link rel="stylesheet" href="src/movieControl.css">
+
+<style>
+	/* 없어도 되는 스타일 */
+	* {margin: 0; padding: 0;}
+	body {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  background: #16171a;
+	}
+	.wrap {max-width: 768px;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<video class="v1">
+			<source src="video/video.mp4" type="video/mp4">
+		</video>
+	</div>
+
+<script src="src/movieControl.js"></script>
+<script>
+
+	document.querySelector('.v1').setControl();
+	
+</script>
+</body>
+</html>

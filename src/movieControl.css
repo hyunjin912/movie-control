@@ -1,0 +1,50 @@
+/***************************************************************************************************************
+* Author : Lee
+* Plugin Name : movieControl
+* File Name : movieControl.css
+* Version : v1.00
+* Date : 2021.12.21
+****************************************************************************************************************/
+@charset "utf-8";
+
+body {user-select: none;}
+.video_box {position: relative; width: 100%;}
+
+video {width: 100%; vertical-align: top; background: #000;}
+.control_box {position: relative; background: #333; width: 100%;}
+
+.inner_ctr {padding: 0 10px; font-size: 0;}
+.ctr {display: inline-block; width: 30px; height: 30px;}
+.set {position: relative;}
+.set .alert_dot {display: none; position: absolute; top: 4px; right: 4px; width: 5px; height: 5px; border-radius: 50%; background: #fff;}
+.set .alert_dot.on {display: block;}
+.volume {float: right;}
+.time {float: right; padding-right: 5px; font-size: 14px; color: #fff; height: 30px; line-height: 30px;}
+
+.inner_length {padding: 0 20px;}
+.leng_box {padding: 10px 0;}
+.total_length_bar {position: relative; background: rgba(153,153,153,.5); width: 100%; height: 4px;}
+.inner_bar {position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;}
+.current_length_bar {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff; transform: translateX(-100%);}
+.dot_box {position: absolute; top: 50%; left: 0; transform: translate(0, -50%); width: 13px; margin-left: -7.5px;}
+.current_dot {background: #fff; border-radius: 50%; height: 13px; transform: scale(0); transition: transform 0.1s cubic-bezier(0.4,0,1,1);}
+.leng_box:hover .current_dot,
+.leng_box.show .current_dot {transform: scale(1);}
+
+.glass_box {position: absolute; top: 0; left: 0; background: transparent;}
+.change_box {display: none; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,.8);}
+.change_box.on {display: block;}
+.change_box form {position: absolute; left: 5px; bottom: 0; width: 39.75%; font-size: 0;}
+.change_box .input_box {overflow: hidden; display: inline-block; position: relative; box-sizing: border-box; margin: 10px 1%; width: 48%; height: 24px;}
+.change_box .input_box input {background: #333; outline: 0; border: 0; border-radius: 4px; width: 100%; height: 100%; text-align: center; color: #fff;}
+.change_box .input_box .placeholder {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13px; color: #fff; white-space: nowrap;}
+/*.change_box .input_box input:focus + .placeholder {display: none;}*/
+.alert_box {position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); color: #fff; font-size: 12px; text-align: center;}
+.alert_box > span {display: none;}
+.alert_box > span.alert {display: block;}
+
+@media (max-width: 270px) {
+	.inner_ctr {text-align: center;}
+	.volume {float: none;}
+	.time {float: none; padding-right: 0;}
+}
